@@ -95,7 +95,7 @@ public class Ship implements IShip{
 	@Raw
 	public Ship(Vector2D position, double angle, double radius, Vector2D velocity)
 			throws IllegalArgumentException, NullPointerException{
-		this(position, angle, radius, velocity, 300000);
+		this(position, angle, radius, velocity, 400000);
 	}
 	
 	/**
