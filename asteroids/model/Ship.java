@@ -203,7 +203,7 @@ public class Ship implements IShip{
 	 */
 	@Basic @Raw
 	public double getAngle(){
-		return 0;
+		return 1;
 	}
 	
 	/**
