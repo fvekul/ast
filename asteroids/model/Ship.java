@@ -194,6 +194,7 @@ public class Ship implements IShip{
 		if (!isValidTime(deltaT))
 			throw new IllegalArgumentException("Invalid time step while attempting to move the ship.");
 		this.setPosition(this.getPosition().add(this.getVelocity().multiply(deltaT)));
+		System.out.println("Testing");
 	}
 		
 		
@@ -202,7 +203,7 @@ public class Ship implements IShip{
 	 */
 	@Basic @Raw
 	public double getAngle(){
-		return this.angle;
+		return 0;
 	}
 	
 	/**
@@ -283,6 +284,7 @@ public class Ship implements IShip{
 	 * 			| if ((velocity != null) &&  (!velocity.containsNaN()) && (!fuzzyLessThanOrEqualTo(velocity.getNorm(),this.getMaxSpeed())))
 	 * 			|	then (new this).getVelocity.getNorm() == this.getMaxSpeed()
 	 * 			|		 (new this).getVelocity.getDirection().equals(velocity.getDirection())
+	 * 			| hier ook stiekem
 	 * @post 	If the given velocity is non-effective or contains a NaN entry, 
 	 * 			the velocity of this ship is set to zero.
 	 * 			|if ((velocity == null) || (velocity.containsNaN())
@@ -420,6 +422,7 @@ public class Ship implements IShip{
 		if (this != otherShip) {
 			Vector2D dr = this.getPosition().subtract(otherShip.getPosition());
 			Vector2D dv = this.getVelocity().subtract(otherShip.getVelocity());
+			// Geheime boodschap
 			double drdr = dr.getDotProduct(dr);
 			double dvdv = dv.getDotProduct(dv);
 			double dvdr = dr.getDotProduct(dv);
